@@ -13,6 +13,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: twentynineteen
 Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
 */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    text-align: center;
+    font-size: 12px;
+    background-color: #f3f3f3;
+}
+
 .nav {
     min-width: 1300px;
     height: 45px;
@@ -29,4 +43,71 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     min-height: 1px;
     padding: 0 100px;
     box-sizing: border-box;
+}
+
+.top {
+    min-height: 1px;
+    width: 100%;
+    padding: 12px 0px;
+    box-sizing: border-box;
+}
+
+.content-box li{
+    color: #fff;
+    line-height: 45px;
+    font-size: 14px;
+    text-decoration: none;
+    width: 78px;
+    height: 45px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.content-box li{
+    cursor: pointer;
+}
+
+.content-box li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.content-box li a:hover{
+    color: #00aeff;
+    font-size: 16px;
+}
+
+.ggb {
+    width: 100%;
+    background-color: #e7e7e7;
+    min-height: 1px;
+    min-width: 1200px;
+}
+
+.content-box1200 {
+    width: 1200px !important;
+    margin: 0px auto;
+    min-height: 1px;
+    box-sizing: border-box;
+}
+
+.webPath {
+    text-align: left;
+    height: 50px;
+    line-height: 50px;
+}
+
+.quickSearch {
+    width: 100%;
+    min-height: 50px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    background-color: #f4f4f4;
+}
+
+.quickSearch .type {
+    width: 100%;
+    min-height: 50px;
 }
