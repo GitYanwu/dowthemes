@@ -91,21 +91,21 @@
     </div>
 </div>
 
-<ul>
-<?php
-    $args = array('category' => $cat);
-    $myposts = get_posts( $args );
-    foreach( $myposts as $post ) :	setup_postdata($post); 
-?>
+<div class="content-box1200 postlist">
+    <?php
+        $args = array('category' => $cat);
+        $myposts = get_posts( $args );
+        foreach( $myposts as $post ) :	setup_postdata($post); 
+    ?>
+        
+            <li>
+                <?php the_post_thumbnail() ?>    
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+    <?php 
+        endforeach;
+        wp_reset_postdata(); 
     
-        <li>
-            <?php the_post_thumbnail() ?>    
-        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-<?php 
-    endforeach;
-    wp_reset_postdata(); 
- 
-?>
-</ul>    
+    ?>
+</div>    
 </body>
 
