@@ -20,6 +20,10 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     box-sizing: border-box;
 }
 
+html,body{
+    height: 100%;
+}
+
 body {
     margin: 0px;
     text-align: center;
