@@ -56,7 +56,7 @@ body {
     box-sizing: border-box;
 }
 
-.content-box li{
+.content-box1200 li{
     color: #fff;
     line-height: 45px;
     font-size: 14px;
@@ -68,16 +68,16 @@ body {
     vertical-align: middle;
 }
 
-.content-box li{
+.content-box1200 li{
     cursor: pointer;
 }
 
-.content-box li a{
+.content-box1200 li a{
     color: #fff;
     text-decoration: none;
 }
 
-.content-box li a:hover{
+.content-box1200 li a:hover{
     color: #00aeff;
     font-size: 16px;
 }
@@ -214,4 +214,30 @@ body {
     line-height: 24px;
     margin-top: 10px;
     display: block;
+}
+
+.banner-list{
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.banner-list li{
+    list-style: none;
+}
+
+.banner-list li a{
+    height: auto;
+    display: block;
+    text-decoration: none;
+    outline: none;
+}
+
+.new-post{
+    letter-spacing: 2px;
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    background: url(../Images/redline.png) no-repeat center center;
+    font-size: 30px;
 }
