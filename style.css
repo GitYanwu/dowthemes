@@ -261,6 +261,17 @@ body {
     list-style: none;
 }
 
+.new-post-content li:hover {
+    cursor: pointer;
+}
+
+.new-post-content li:hover .courseName{
+    color: #06c !important;
+}
+
+.new-post-content li:hover .post-img{
+    opacity: 1;
+}
 .new-post-content .post-img{
     width: 100%;
     height: 214px;
@@ -268,6 +279,7 @@ body {
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
+    opacity: 0.9;
 }
 
 .new-post-content .post-link{
