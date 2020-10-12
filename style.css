@@ -241,3 +241,63 @@ body {
     background: url(../Images/redline.png) no-repeat center center;
     font-size: 30px;
 }
+
+.new-post-content{
+    width: 1200px;
+    margin: auto;
+}
+
+.new-post-content li{
+    overflow: hidden;
+    width: 276px;
+    height: 242px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: #ccc 0px 0px 8px;
+    text-decoration: none;
+    opacity: 0.9;
+    margin-left: 32px;
+    float: left;
+    list-style: none;
+}
+
+.new-post-content .post-img{
+    width: 100%;
+    height: 214px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.new-post-content .post-link{
+    outline: none;
+    text-decoration: none;
+}
+
+.new-post-content .courseName{
+    height: 28px;
+    line-height: 28px;
+    width: 100%;
+    padding: 0px 10px;
+    font-size: 13px;
+    text-align: left;
+    color: #333;
+}
+
+.new-post-content li:nth-child(1){
+    margin-left: 0px;
+}
+
+.new-post-content li:nth-child(5){
+    margin-left: 0px;
+}
+
+.new-post-content li:nth-child(n+5){
+    margin-top: 20px;
+}
+
+.new-post-content li img{
+    width: 100%;
+    height: 200px;
+}

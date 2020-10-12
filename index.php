@@ -42,7 +42,27 @@
 <div>
 	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './redline.png'; ?>) no-repeat center center;">最新课程</div>
 </div>            
-    
+<?php // 最新文章区域 显示最新的 8 篇文章 ?>
+<div class="new-post-content">
+	<?php
+		// 1 - 4
+		$args = array('numberposts' => 8);
+		$myposts = get_posts($args);
+		foreach( $myposts as $post ) :	setup_postdata($post); 
+	?>
+	<li>
+		<a href="<?php the_permalink(); ?>" class="post-link">
+			<div class="post-img" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');"></div>
+			<div class="courseName">
+				<?php the_title(); ?>
+			</div>
+		</a>
+	</li>
+	<?php 
+        endforeach;
+        wp_reset_postdata(); 
+    ?>	
+</div>
 <?php 
 
 ?>
