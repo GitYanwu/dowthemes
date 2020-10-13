@@ -99,7 +99,16 @@
 </div>
 <?php // 课程分类 暂时先写死数据 ?>
 <div>
-	<div>
-		<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './redline.png'; ?>) no-repeat center center;">课程分类</div>
+	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './redline.png'; ?>) no-repeat center center;">课程分类</div>
+    <div class="tag">
+	     <a href="" class="keyword">Typescript</a>
+	     <a href="" class="keyword">HTML/CSS</a>
+	     <a href="" class="keyword">JavaScript</a>
+	     <a href="" class="keyword">Vue.js</a>
+	     <a href="" class="keyword">React.JS</a>
+		 <a href="" class="keyword">Angular</a>
+		 <div style="clear: both"></div>
+		 <div class="line"></div>
 	</div>
+	<img src="<?php echo get_template_directory_uri() . './web.png'; ?>" alt="#">
 </div>

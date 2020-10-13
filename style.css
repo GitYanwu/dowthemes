@@ -424,3 +424,33 @@ body {
 .hot-post-content:after {
     clear: both;
 }
+
+.tag {
+  box-sizing: border-box;
+  padding-bottom: 7px;
+  min-height: 1px;
+  text-align: justify;
+  width: 1200px;
+  margin: auto;
+  height: 44px;
+  position: relative;
+}
+
+.keyword {
+  float: left;
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+
+.line{
+  font-size: 0;
+    line-height: 0;
+    border-top: solid 1px #eee;
+    float: none;
+    bottom: 10px;
+    position: absolute;
+    width: 100%;
+}
