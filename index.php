@@ -25,7 +25,7 @@
 <div class="banner-list">
 	<?php
 		//  banner 区域
-		$args = array('category' => 'banner','numberposts' => 1);
+		$args = array('category' => 29,'numberposts' => 20);
 		$myposts = get_posts( $args );
 		foreach( $myposts as $post ) :	setup_postdata($post); 
 	?>
@@ -42,20 +42,24 @@
 <div>
 	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './redline.png'; ?>) no-repeat center center;">最新课程</div>
 </div>            
-<?php // 最新文章区域 显示最新的 8 篇文章 ?>
+<?php // 最新文章区域 显示最新的 10 篇文章 ?>
 <div class="new-post-content">
 	<?php
 		// 1 - 4
-		$args = array('numberposts' => 8);
+		$args = array('numberposts' => 10);
 		$myposts = get_posts($args);
 		foreach( $myposts as $post ) :	setup_postdata($post); 
 	?>
 	<li>
 		<a href="<?php the_permalink(); ?>" class="post-link">
-			<div class="post-img" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');"></div>
-			<div class="courseName">
-				<?php the_title(); ?>
+			<div class="post-img" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');">
+				<div class="sy_mask">
+					<img class="sy_show imgguankan" src="<?php echo get_template_directory_uri() . './sy_box3guankan.png'; ?>">
+				</div>
 			</div>
+			<h2 class="courseName">
+				<?php the_title(); ?>
+			</h2>
 		</a>
 	</li>
 	<?php 
@@ -63,6 +67,39 @@
         wp_reset_postdata(); 
     ?>	
 </div>
-<?php 
 
-?>
+<?php // 热门文章区域 显示最热门的 10 篇文章 ?>
+<div class="hot-content">
+	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './redline.png'; ?>) no-repeat center center;">热门推荐</div>
+	<div class="hot-post-content">
+		<ul>
+			<?php
+				$most_viewed_posts = new WP_Query(); //使用 WP_Query 自定义 WordPress Loop
+				$most_viewed_posts->query('showposts=10&orderby=meta_value&meta_key=views');
+				while ($most_viewed_posts->have_posts()): $most_viewed_posts->the_post();
+			?>
+			<li>
+				<a href="<?php the_permalink(); ?>" class="post-link">
+					<div class="post-img" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');">
+						<div class="sy_mask">
+							<img class="sy_show imgguankan" src="<?php echo get_template_directory_uri() . './sy_box3guankan.png'; ?>">
+						</div>
+					</div>
+					<h2 class="courseName">
+						<?php the_title(); ?>
+					</h2>
+				</a>
+			</li>
+			<?php 
+				endwhile; 
+				wp_reset_postdata(); 
+			?>
+		</ul> 
+	</div>
+</div>
+<?php // 课程分类 暂时先写死数据 ?>
+<div>
+	<div>
+		<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './redline.png'; ?>) no-repeat center center;">课程分类</div>
+	</div>
+</div>
