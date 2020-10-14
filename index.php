@@ -40,7 +40,7 @@
     ?>
 </div>  
 <div>
-	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './redline.png'; ?>) no-repeat center center;">最新课程</div>
+	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './images/redline.png'; ?>) no-repeat center center;">最新课程</div>
 </div>            
 <?php // 最新文章区域 显示最新的 10 篇文章 ?>
 <div class="new-post-content">
@@ -54,7 +54,7 @@
 		<a href="<?php the_permalink(); ?>" class="post-link">
 			<div class="post-img" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');">
 				<div class="sy_mask">
-					<img class="sy_show imgguankan" src="<?php echo get_template_directory_uri() . './sy_box3guankan.png'; ?>">
+					<img class="sy_show imgguankan" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
 				</div>
 			</div>
 			<h2 class="courseName">
@@ -70,7 +70,7 @@
 
 <?php // 热门文章区域 显示最热门的 10 篇文章 ?>
 <div class="hot-content">
-	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './redline.png'; ?>) no-repeat center center;">热门推荐</div>
+	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './images/redline.png'; ?>) no-repeat center center;">热门推荐</div>
 	<div class="hot-post-content">
 		<ul>
 			<?php
@@ -82,7 +82,7 @@
 				<a href="<?php the_permalink(); ?>" class="post-link">
 					<div class="post-img" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');">
 						<div class="sy_mask">
-							<img class="sy_show imgguankan" src="<?php echo get_template_directory_uri() . './sy_box3guankan.png'; ?>">
+							<img class="sy_show imgguankan" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
 						</div>
 					</div>
 					<h2 class="courseName">
@@ -97,10 +97,14 @@
 		</ul> 
 	</div>
 </div>
-<?php // 课程分类 暂时先写死数据 ?>
+
+<?php // 课程分类 ?>
 <div>
-	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './redline.png'; ?>) no-repeat center center;">课程分类</div>
-    <div class="tag">
+	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './images/redline.png'; ?>) no-repeat center center;">课程分类</div>
+	
+	
+	<?php // web ?>
+	<div class="tag">
 	     <a href="" class="keyword">Typescript</a>
 	     <a href="" class="keyword">HTML/CSS</a>
 	     <a href="" class="keyword">JavaScript</a>
@@ -110,5 +114,148 @@
 		 <div style="clear: both"></div>
 		 <div class="line"></div>
 	</div>
-	<img src="<?php echo get_template_directory_uri() . './web.png'; ?>" alt="#">
+	<div class="type-row">
+		<li>
+			<img src="<?php echo get_template_directory_uri() . './images/web.png'; ?>" alt="#">
+		</li>
+		<?php
+			$args = array('category' => 8,'numberposts' => 4);
+			$myposts = get_posts( $args );
+			foreach( $myposts as $post ) :	setup_postdata($post); 
+		?>
+		<li>
+			<a href="<?php the_permalink(); ?>">
+				<div class="post-item" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');">
+				</div>  
+			</a>
+			<h2 class="courseName">
+				<?php the_title(); ?>
+			</h2>
+			<div class="post-item-mask">
+				<img class="tips-img" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+			</div>
+		</li>
+		<?php 
+			endforeach;
+			wp_reset_postdata(); 
+		?>
+	</div>
+
+
+
+	<?php // 后端 ?>
+	<div class="tag">
+	     <a href="" class="keyword">Typescript</a>
+	     <a href="" class="keyword">HTML/CSS</a>
+	     <a href="" class="keyword">JavaScript</a>
+	     <a href="" class="keyword">Vue.js</a>
+	     <a href="" class="keyword">React.JS</a>
+		 <a href="" class="keyword">Angular</a>
+		 <div style="clear: both"></div>
+		 <div class="line"></div>
+	</div>
+	<div class="type-row">
+		<li>
+			<img src="<?php echo get_template_directory_uri() . './images/rearend.png'; ?>" alt="#">
+		</li>
+		<?php
+			//  banner 区域
+			$args = array('category' => 9,'numberposts' => 4);
+			$myposts = get_posts( $args );
+			foreach( $myposts as $post ) :	setup_postdata($post); 
+		?>
+		<li>
+			<a href="<?php the_permalink(); ?>">
+				<div class="post-item" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');"></div>  
+			</a>
+			<h2 class="courseName">
+				<?php the_title(); ?>
+			</h2>
+			<div class="post-item-mask">
+				<img class="tips-img" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+			</div>
+		</li>
+		<?php 
+			endforeach;
+			wp_reset_postdata(); 
+		?>
+	</div>
+
+
+	<?php // 移动端 ?>
+	<div class="tag">
+	     <a href="" class="keyword">Typescript</a>
+	     <a href="" class="keyword">HTML/CSS</a>
+	     <a href="" class="keyword">JavaScript</a>
+	     <a href="" class="keyword">Vue.js</a>
+	     <a href="" class="keyword">React.JS</a>
+		 <a href="" class="keyword">Angular</a>
+		 <div style="clear: both"></div>
+		 <div class="line"></div>
+	</div>
+	<div class="type-row">
+		<li>
+			<img src="<?php echo get_template_directory_uri() . './images/mobile.png'; ?>" alt="#">
+		</li>
+		<?php
+			//  banner 区域
+			$args = array('category' => 9,'numberposts' => 4);
+			$myposts = get_posts( $args );
+			foreach( $myposts as $post ) :	setup_postdata($post); 
+		?>
+		<li>
+			<a href="<?php the_permalink(); ?>">
+				<div class="post-item" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');"></div>  
+			</a>
+			<h2 class="courseName">
+				<?php the_title(); ?>
+			</h2>
+			<div class="post-item-mask">
+				<img class="tips-img" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+			</div>
+		</li>
+		<?php 
+			endforeach;
+			wp_reset_postdata(); 
+		?>
+	</div>
+
+
+	<?php // 云计算 ?>
+	<div class="tag">
+	     <a href="" class="keyword">Typescript</a>
+	     <a href="" class="keyword">HTML/CSS</a>
+	     <a href="" class="keyword">JavaScript</a>
+	     <a href="" class="keyword">Vue.js</a>
+	     <a href="" class="keyword">React.JS</a>
+		 <a href="" class="keyword">Angular</a>
+		 <div style="clear: both"></div>
+		 <div class="line"></div>
+	</div>
+	<div class="type-row">
+		<li>
+			<img src="<?php echo get_template_directory_uri() . './images/cloud.png'; ?>" alt="#">
+		</li>
+		<?php
+			//  banner 区域
+			$args = array('category' => 9,'numberposts' => 4);
+			$myposts = get_posts( $args );
+			foreach( $myposts as $post ) :	setup_postdata($post); 
+		?>
+		<li>
+			<a href="<?php the_permalink(); ?>">
+				<div class="post-item" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');"></div>  
+			</a>
+			<h2 class="courseName">
+				<?php the_title(); ?>
+			</h2>
+			<div class="post-item-mask">
+				<img class="tips-img" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+			</div>
+		</li>
+		<?php 
+			endforeach;
+			wp_reset_postdata(); 
+		?>
+	</div>
 </div>

@@ -454,3 +454,92 @@ body {
     position: absolute;
     width: 100%;
 }
+
+.type-row{
+  width: 1200px;
+  height: auto;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.type-row:before,
+.type-row:after {
+    content: "";
+    display: table;
+}
+
+.type-row:after {
+    clear: both;
+}
+
+
+.type-row li{
+  list-style: none;
+  width: 212px;
+  height: 212px;
+  float: left;
+  margin-left: 35px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: #ccc 0px 0px 8px;
+  text-decoration: none;
+  vertical-align: middle;
+  overflow: hidden;
+  position: relative;
+}
+
+.type-row li a{
+  width: 100%;
+  height: 100%;
+}
+
+.type-row li:nth-child(1){
+  margin-left: 0;
+}
+
+.type-row li .post-item{
+  width: 100%;
+  height: 186px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.type-row li .post-item-mask{
+    width: 212px;
+    height: 212px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: none; 
+}
+
+.type-row li:hover{
+  cursor: pointer;
+}
+
+.type-row li:hover .post-item-mask{
+  display: block;
+}
+
+.type-row li .post-item-mask .tips-img{
+  margin: 96px auto;
+}
+
+.type-row li .courseName{
+  height: 26px;
+  line-height: 26px;
+  width: 100%;
+  font-size: 13px;
+  padding: 0px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: normal;
+  color: #333;
+  text-align: left;
+}
