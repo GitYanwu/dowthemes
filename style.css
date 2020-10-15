@@ -436,6 +436,23 @@ body {
   position: relative;
 }
 
+.tag .more{
+    position: absolute;
+    right: 0px;
+    bottom: 20px;
+    text-decoration: none;
+    display: block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background-color: #00aeff;
+    color: #fff;
+    font-size: 12px;
+}
+
+.tag .more-icon{
+  font-size: 10px;
+}
+
 .keyword {
   float: left;
   margin-right: 20px;

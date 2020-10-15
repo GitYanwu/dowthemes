@@ -1,8 +1,9 @@
 <?php 
     // add css enqueue
     function add_css_enqueue(){
-        wp_register_style('enqueue_style', get_template_directory_uri() . '/style.css', '', '1.0.0');
-        wp_enqueue_style('enqueue_style');
+        wp_enqueue_style('enqueue_style', get_template_directory_uri() . '/style.css', '', '1.0.0');
+        wp_enqueue_style('iconfont', get_template_directory_uri() . '/iconfont.css', '', '1.0.0');
+        // wp_enqueue_style('enqueue_style','iconfont');
     }
     add_action('wp_enqueue_scripts', 'add_css_enqueue');
 

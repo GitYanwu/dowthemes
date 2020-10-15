@@ -101,18 +101,21 @@
 <?php // 课程分类 ?>
 <div>
 	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './images/redline.png'; ?>) no-repeat center center;">课程分类</div>
-	
-	
 	<?php // web ?>
 	<div class="tag">
-	     <a href="" class="keyword">Typescript</a>
-	     <a href="" class="keyword">HTML/CSS</a>
-	     <a href="" class="keyword">JavaScript</a>
-	     <a href="" class="keyword">Vue.js</a>
-	     <a href="" class="keyword">React.JS</a>
-		 <a href="" class="keyword">Angular</a>
+	     <a href="<?php echo get_category_link(get_term_by('id', 14, 'category')->term_id) ?>" class="keyword">Typescript</a>
+	     <a href="<?php echo get_category_link(get_term_by('id', 15, 'category')->term_id) ?>" class="keyword">HTML/CSS</a>
+	     <a href="<?php echo get_category_link(get_term_by('id', 28, 'category')->term_id) ?>" class="keyword">JavaScript</a>
+	     <a href="<?php echo get_category_link(get_term_by('id', 16, 'category')->term_id) ?>" class="keyword">Vue.js</a>
+	     <a href="<?php echo get_category_link(get_term_by('id', 17, 'category')->term_id) ?>" class="keyword">React.JS</a>
+		 <a href="<?php echo get_category_link(get_term_by('id', 18, 'category')->term_id) ?>" class="keyword">Angular</a>
 		 <div style="clear: both"></div>
 		 <div class="line"></div>
+		 <a href="<?php echo get_category_link(get_term_by('id', 8, 'category')->term_id) ?>" class="more">
+			 更多
+			 <span class="iconfont icon-right more-icon"></span>
+			 <span class="iconfont icon-right more-icon"></span>
+		</a>
 	</div>
 	<div class="type-row">
 		<li>
