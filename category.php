@@ -10,12 +10,22 @@
 <div class="ggb">
     <div class="content-box1200" style="background-color: #e7e7e7;">
         <div class="webPath">
-            <a href="<?php echo home_url(); ?>">首页</a>
-            <i class="Hui-iconfont Hui-iconfont-arrow2-right"></i> 
-            <a><?php single_cat_title(); ?></a>
+            <a class="category-path-main" href="<?php echo home_url(); ?>">首页</a>
+            <span class="iconfont icon-right category-path-icon"></span>
+            <a class="category-path-this"><?php single_cat_title(); ?></a>
         </div>
     </div>
 </div>
+<?php
+    // web
+    $this_category = get_category($cat);
+    $parent = $this_category->category_parent;
+    if($cat === 8 || $parent === 8){
+?>
+    <img src="<?php echo get_template_directory_uri() . './images/webbanner.png'; ?>" alt="#">
+<?php
+    }
+?>        
 
 <div class="newList content-box1200">
     <div class="quickSearch">
@@ -25,10 +35,7 @@
             </div>
             <div id="soft" class="typeNodes">
                 <?php
-                    // 当前分类 
-                    $this_category = get_category($cat); 
                     // 父分类
-                    $parent = $this_category->category_parent;
                     $args = array(
                         'title_li' => '',
                         'hide_empty'=> 0,
@@ -64,20 +71,26 @@
     </div>
 </div>
 
-<div class="content-box1200 postlist">
+<div class="content-box1200 category-postlist">
     <?php
-        $args = array('category' => $cat);
+        $args = array('category' => $cat,'numberposts'=>1000000);
         $myposts = get_posts( $args );
         foreach( $myposts as $post ) :	setup_postdata($post); 
     ?>
-        
-            <li>
-                <?php the_post_thumbnail() ?>    
-            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+        <li>
+            <a href="<?php the_permalink(); ?>">
+                <div class="post-item" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');">
+                    <div class="post-item-mask">
+                        <img class="tips-img" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+                    </div>
+                </div>  
+			</a>
+			<h2 class="courseName">
+				<?php the_title(); ?>
+			</h2>
     <?php 
         endforeach;
         wp_reset_postdata(); 
-    
     ?>
 </div>    
 </body>
