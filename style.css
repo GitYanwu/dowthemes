@@ -32,6 +32,26 @@ body {
   background: rgb(255, 255, 255);
 }
 
+.mt10{
+  margin-top: 10px !important;
+}
+
+.pb20{
+  padding-bottom: 20px !important;
+}
+
+.mr30{
+  margin-right: 30px !important;
+}
+
+.mr10{
+  margin-right: 10px !important;
+}
+
+.f14{
+  font-size: 14px !important;
+}
+
 .nav {
   min-width: 1300px;
   height: 45px;
@@ -675,4 +695,76 @@ footer{
 
 .category-postlist li:hover .post-item-mask{
   display: block;
+}
+
+.single-content-box{
+  width: 100%;
+  height: auto;
+  background-color: #e7e7e7;
+}
+
+.single-content{
+  width: 1200px;
+  height: auto;
+  margin: auto;
+}
+
+.single-content-box .single-content .webpath{
+  text-align: left;
+  height: 50px;
+  line-height: 50px;
+}
+
+.single-content-box .single-content .title-content{
+  width: 100%;
+  min-height: 1px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  text-align: left;
+}
+
+.single-content-box .single-content .single-post-image{
+    width: 300px;
+    height: 235px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    display: inline-block;
+}
+
+.single-content-box .single-content .single-post-detail{
+  width: 800px;
+  height: 275px;
+  display: inline-block;
+  vertical-align: top!important;
+}
+
+.single-content-box .single-content .single-post-detail .title{
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 40px;
+  height: 40px;
+}
+
+.single-content-box .single-content .single-post-detail .countNum{
+  color: #636363;
+}
+
+.single-content-box .single-content .single-post-detail .number{
+  color: #dd514c;
+  font-weight: bold;
+}
+
+.single-content-box .single-content .single-post-detail .description{
+  width: 650px;
+  height: auto;
+  line-height: 24px;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  padding: 10px;
+  font-size: 13px;
+  text-indent: 20px;
 }
