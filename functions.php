@@ -7,6 +7,14 @@
     }
     add_action('wp_enqueue_scripts', 'add_css_enqueue');
 
+    function add_js_enqueue() {
+        wp_register_script('plugin_script', get_template_directory_uri().'/main.js', '','1.1');
+        wp_enqueue_script('plugin_script');
+    }
+    add_action( 'wp_enqueue_scripts', 'add_js_enqueue' );
+        
+        
+
 
     //remove header
     remove_action( 'wp_head', 'feed_links', 2 ); //去除文章feed
@@ -60,4 +68,5 @@
     add_filter( 'style_loader_src', 'wpdaxue_remove_cssjs_ver', 999 );
 
     add_theme_support('post-thumbnails');
+    
 ?>

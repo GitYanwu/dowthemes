@@ -68,7 +68,7 @@
 	<div class="single-detail-content">
 		<!-- 以下代码用于代码模式编辑文章 不再页面上显示 -->
 		<div style="overflow: hidden;margin: 0 15px;padding-bottom: 100px;">
-			<input type="radio" name="postdetail" id="postList" checked="checked">
+			<input type="radio" name="postdetail" id="postList" checked='true'>
 			<label for="postList" class="post-detail-label">课程目录</label>
 			<span class="post-detail-line"></span>
 			<input type="radio" name="postdetail" id="postDownload">
@@ -164,17 +164,18 @@
 						</ul>
 					</div>
 					<div class="post-detail-list-item-more">
-						<span>更多章节请下载完整视频观看 ＞＞</span>
+						<span id="postDetailMoreBtn">更多章节请下载完整视频观看 ＞＞</span>
 					</div>
 				</div>
 				<div class="post-list-content" id="postDownloadContent">
 					<ul>
 						<li>
 							<div class="post-detail-download-item-icon">
-								<span class="iconfont icon-Bookmark"></span>							
+								<span class="iconfont icon-Group-" style="font-size: 28px;"></span>							
 							</div>
 							<div class="post-detail-download-item-content">
-								<a href="https://www.iconfont.cn/api/project/download.zip?spm=a313x.7781069.1998910419.d7">
+								<a href="https://www.iconfont.cn/api/project/download.zip?spm=a313x.7781069.1998910419.d7"
+									target="_blank">
 									<div class="title">download.zip</div>
 									<div class="download-link">
 										https://www.iconfont.cn/api/project/download.zip?spm=a313x.7781069.1998910419.d7
@@ -184,10 +185,11 @@
 						</li>
 						<li>
 							<div class="post-detail-download-item-icon">
-								<span class="iconfont icon-Bookmark"></span>							
+								<span class="iconfont icon-Group-" style="font-size: 28px;"></span>							
 							</div>
 							<div class="post-detail-download-item-content">
-								<a href="https://www.iconfont.cn/api/project/download.zip?spm=a313x.7781069.1998910419.d7">
+								<a href="https://www.iconfont.cn/api/project/download.zip?spm=a313x.7781069.1998910419.d7"
+									target="_blank">
 									<div class="title">download.zip</div>
 									<div class="download-link">
 										https://www.iconfont.cn/api/project/download.zip?spm=a313x.7781069.1998910419.d7
@@ -197,10 +199,11 @@
 						</li>
 						<li>
 							<div class="post-detail-download-item-icon">
-								<span class="iconfont icon-Bookmark"></span>							
+								<span class="iconfont icon-Group-" style="font-size: 28px;"></span>							
 							</div>
 							<div class="post-detail-download-item-content">
-								<a href="https://www.iconfont.cn/api/project/download.zip?spm=a313x.7781069.1998910419.d7">
+								<a href="https://www.iconfont.cn/api/project/download.zip?spm=a313x.7781069.1998910419.d7"
+									target="_blank">
 									<div class="title">download.zip</div>
 									<div class="download-link">
 										https://www.iconfont.cn/api/project/download.zip?spm=a313x.7781069.1998910419.d7
@@ -213,5 +216,29 @@
 			</div>
 		</div>
 		<!-- <?php echo $post->post_content;?> -->
+	</div>
+	<!-- 相关推荐 -->
+	<div>
+		<?php
+			$category = get_the_category();
+			$args = array('category' => $cat,'numberposts'=>3);
+			$myposts = get_posts( $args );
+			foreach( $myposts as $post ) :	setup_postdata($post); 
+    	?>
+        <li>
+            <a href="<?php the_permalink(); ?>">
+                <div class="post-item" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');">
+                    <div class="post-item-mask">
+                        <img class="tips-img" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+                    </div>
+                </div>  
+			</a>
+			<h2 class="courseName">
+				<?php the_title(); ?>
+			</h2>
+		<?php 
+			endforeach;
+			wp_reset_postdata(); 
+		?>
 	</div>
 </div>

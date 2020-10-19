@@ -971,8 +971,9 @@ input[id='postDownload']:checked ~ div > div[id="postDownloadContent"]{
 
 .post-detail-download-item-content .title{
   text-align: left;
-  font-size: 13px;
+  font-size: 14px;
   color: #00aeff;
+  line-height: 20px;
 }
 
 .post-detail-download-item-content .download-link{
