@@ -739,9 +739,10 @@ footer {
 
 .single-content-box .single-content .single-post-detail {
   width: 800px;
-  height: 235px;
   display: inline-block;
   vertical-align: top !important;
+  height: auto;
+  min-height: 235px;
 }
 
 .single-content-box .single-content .single-post-detail .title {
@@ -818,8 +819,26 @@ footer {
 .single-detail-content-box .single-detail-content{
   width: 1200px;
   height: auto;
-  background-color: #fff;
   margin: auto;
+}
+
+.single-detail-content-box .single-detail-content .single-detail-left-content{
+  float: left;
+  background-color: #FFF;
+  width: 910px;
+}
+
+.single-detail-content-box .single-detail-content .single-detail-right-content{
+  width: 270px;
+  float: right;
+  background-color: #fff;
+  padding: 0px 15px 15px 15px;
+  box-sizing: border-box;
+}
+
+.single-detail-content-box .single-detail-content .single-detail-right-content ul,
+.single-detail-content-box .single-detail-content .single-detail-right-content ul li{
+  list-style: none;
 }
 
 .single-detail-content-box .single-detail-content .post-list-content{
@@ -980,4 +999,39 @@ input[id='postDownload']:checked ~ div > div[id="postDownloadContent"]{
   text-align: left;
   font-size: 12px;
   color: rgb(95,99,104);
+}
+
+.recommend-title{
+  height: 45px;
+    line-height: 45px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    letter-spacing: 1px;
+    color: #00aeff;
+    font-size: 16px;
+    
+    margin-bottom: 10px;
+
+}
+
+.recommend-post-image{
+  width: 200px;
+  height: 150px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.recommend-post-name{
+  height: 34px;
+  line-height: 34px;
+  overflow: hidden;
+  color: #999;
+  font-size: 12px;
+  font-weight: normal;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 10px;
 }
