@@ -361,8 +361,19 @@
 	<div class="footer-content">
 		<p class="website">
 			<span class="title">网站信息</span>
-			<span style="margin-right: 20px;">建站时间:2020-10-15</span>
-			<span>访问量:<?php the_views(); ?></span>
+			<span style="margin-right: 20px;">建站时间:<span class="ml5">2020-10-15</span></span>
+			<span>访问量:<span class="ml5"><?php the_views(); ?>人访问过</span> </span>
+		</p>
+		<p class="webdescribe">
+			<span class="title">联系方式</span>
+			<span style="margin-right: 20px;">wmdtdwm@163.com</span>
+		</p>
+		<p class="webdescribe">
+			<span class="title">备案号</span>
+			<span style="margin-right: 20px;">鄂ICP备2020015836号</span>
+		</p>
+		<p class="webdescribe">
+			<span>本网站所有教程均来自互联网,如有侵权,请联系站长进行删除</span>
 		</p>
 	</div>
 </footer>
