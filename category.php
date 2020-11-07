@@ -20,7 +20,7 @@
     // web
     $this_category = get_category($cat);
     $parent = $this_category->category_parent;
-    if($cat === 8 || $parent === 8){
+    if($cat === 2 || $parent === 2){
 ?>
     <img src="<?php echo get_template_directory_uri() . './images/webbanner.png'; ?>" alt="#">
 <?php
@@ -39,6 +39,7 @@
                     $args = array(
                         'title_li' => '',
                         'hide_empty'=> 0,
+						'orderby' => 'ID'
                     );
                     if($parent){
                         // 存在父分类 代表是二级分类 需要传入 父分类 ID

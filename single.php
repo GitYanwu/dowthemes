@@ -193,6 +193,9 @@
 				</div>
 			</div> -->
 			<?php echo $post->post_content;?>
+			<div class="comments_template">
+				<?php comments_template();?>
+			</div>		
 		</div>
 		<!-- 相关推荐 -->
 		<div class="single-detail-right-content">
@@ -200,7 +203,7 @@
 			<ul>
 				<?php
 					$category = get_the_category();
-					$args = array('category' => $cat,'numberposts'=>3);
+					$args = array('category' => $cat,'numberposts'=>3,'exclude'=>$post->ID);
 					$myposts = get_posts( $args );
 					foreach( $myposts as $post ) :	setup_postdata($post); 
 				?>
@@ -221,3 +224,5 @@
 		<div style="clear: both;"></div>
 	</div>
 </div>
+<?php wp_footer(); ?>
+</body>

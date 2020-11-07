@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * The main template file
  */
@@ -13,10 +13,11 @@
 		<?php
 			// 导航区域
 			$args = array(
+				'orderby' => 'id',
 				'hide_empty'=>0,
 				'title_li'=>"", 
 				'depth'=>1,
-				'exclude'=>29  
+				'exclude'=>1  
 			);
 			wp_list_categories( $args ); 
 		?>
@@ -38,9 +39,27 @@
         endforeach;
         wp_reset_postdata(); 
     ?>
-</div>  
+</div> 
+	<?php // 图片oss Base 路径?>
+	<?php $imgOssBaseUrl = "https://51dow-1300501914.cos.ap-nanjing.myqcloud.com/wp-content/uploads/" ?> 
+	<?php // 标题分割线 ?>
+	<?php $titleLineImgUrl = $imgOssBaseUrl.'2020/10/20201024143046131.png'; ?>
+	<?php // 前端 ?>
+	<?php $webMainImgUrl = $imgOssBaseUrl.'2020/10/20201024143043452.png'; ?>
+	<?php // 后端 ?>
+	<?php $rearendMainImgUrl = $imgOssBaseUrl.'2020/10/20201024143044553.png'; ?>
+	<?php // 移动 ?>
+	<?php $mobileMainImgUrl = $imgOssBaseUrl.'2020/10/20201024143045904.png'; ?>
+	<?php // 云计算 ?>
+	<?php $cloudMainImgUrl = $imgOssBaseUrl.'2020/10/20201024143044253.png'; ?>
+	<?php // 运行维护 ?>
+	<?php $devopsMainImgUrl = $imgOssBaseUrl.'2020/10/20201024143045147.png'; ?>
+	<?php // UI设计 ?>
+	<?php $uiMainImgUrl = $imgOssBaseUrl.'2020/10/20201024143043695.png'; ?>
+	<?php // 播放小图标 ?>
+	<?php $playIconUrl = $imgOssBaseUrl.'2020/10/20201024143045857.png'; ?>
 <div>
-	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './images/redline.png'; ?>) no-repeat center center;">最新课程</div>
+	<div class="new-post" style="background: url(<?php echo $titleLineImgUrl ?>) no-repeat center center;">最新课程</div>
 </div>            
 <?php // 最新文章区域 显示最新的 10 篇文章 ?>
 <div class="new-post-content">
@@ -54,7 +73,7 @@
 		<a href="<?php the_permalink(); ?>" class="post-link">
 			<div class="post-img" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');">
 				<div class="sy_mask">
-					<img class="sy_show imgguankan" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+					<img class="sy_show imgguankan" src="<?php echo $playIconUrl ?>">
 				</div>
 			</div>
 			<h2 class="courseName">
@@ -70,7 +89,7 @@
 
 <?php // 热门文章区域 显示最热门的 10 篇文章 ?>
 <div class="hot-content">
-	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './images/redline.png'; ?>) no-repeat center center;">热门推荐</div>
+	<div class="new-post" style="background: url(<?php echo $titleLineImgUrl ?>) no-repeat center center;">热门推荐</div>
 	<div class="hot-post-content">
 		<ul>
 			<?php
@@ -82,7 +101,7 @@
 				<a href="<?php the_permalink(); ?>" class="post-link">
 					<div class="post-img" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');">
 						<div class="sy_mask">
-							<img class="sy_show imgguankan" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+							<img class="sy_show imgguankan" src="<?php echo $playIconUrl ?>">
 						</div>
 					</div>
 					<h2 class="courseName">
@@ -100,7 +119,7 @@
 
 <?php // 课程分类 ?>
 <div>
-	<div class="new-post" style="background: url(<?php echo get_template_directory_uri() . './images/redline.png'; ?>) no-repeat center center;">课程分类</div>
+	<div class="new-post" style="background: url(<?php echo $titleLineImgUrl ?>) no-repeat center center;">课程分类</div>
 	<?php // web ?>
 	<div class="tag">
 	     <a href="<?php echo get_category_link(get_term_by('id', 14, 'category')->term_id) ?>" class="keyword">Typescript</a>
@@ -119,7 +138,7 @@
 	</div>
 	<div class="type-row">
 		<li>
-			<img src="<?php echo get_template_directory_uri() . './images/web.png'; ?>" alt="#">
+			<img src="<?php echo $webMainImgUrl ?>" alt="#">
 		</li>
 		<?php
 			$args = array('category' => 8,'numberposts' => 4);
@@ -135,7 +154,7 @@
 				<?php the_title(); ?>
 			</h2>
 			<div class="post-item-mask">
-				<img class="tips-img" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+				<img class="tips-img" src="<?php echo $playIconUrl ?>">
 			</div>
 		</li>
 		<?php 
@@ -159,7 +178,7 @@
 	</div>
 	<div class="type-row">
 		<li>
-			<img src="<?php echo get_template_directory_uri() . './images/rearend.png'; ?>" alt="#">
+			<img src="<?php echo $rearendMainImgUrl ?>" alt="#">
 		</li>
 		<?php
 			//  banner 区域
@@ -175,7 +194,7 @@
 				<?php the_title(); ?>
 			</h2>
 			<div class="post-item-mask">
-				<img class="tips-img" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+				<img class="tips-img" src="<?php echo $playIconUrl ?>">
 			</div>
 		</li>
 		<?php 
@@ -198,7 +217,7 @@
 	</div>
 	<div class="type-row">
 		<li>
-			<img src="<?php echo get_template_directory_uri() . './images/mobile.png'; ?>" alt="#">
+			<img src="<?php echo $mobileMainImgUrl ?>" alt="#">
 		</li>
 		<?php
 			//  banner 区域
@@ -214,7 +233,7 @@
 				<?php the_title(); ?>
 			</h2>
 			<div class="post-item-mask">
-				<img class="tips-img" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+				<img class="tips-img" src="<?php echo $playIconUrl ?>">
 			</div>
 		</li>
 		<?php 
@@ -237,7 +256,7 @@
 	</div>
 	<div class="type-row">
 		<li>
-			<img src="<?php echo get_template_directory_uri() . './images/cloud.png'; ?>" alt="#">
+			<img src="<?php echo $cloudMainImgUrl ?>" alt="#">
 		</li>
 		<?php
 			//  banner 区域
@@ -253,7 +272,7 @@
 				<?php the_title(); ?>
 			</h2>
 			<div class="post-item-mask">
-				<img class="tips-img" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+				<img class="tips-img" src="<?php echo $playIconUrl ?>">
 			</div>
 		</li>
 		<?php 
@@ -275,7 +294,7 @@
 	</div>
 	<div class="type-row">
 		<li>
-			<img src="<?php echo get_template_directory_uri() . './images/devops.png'; ?>" alt="#">
+			<img src="<?php echo $devopsMainImgUrl ?>" alt="#">
 		</li>
 		<?php
 			//  banner 区域
@@ -291,7 +310,7 @@
 				<?php the_title(); ?>
 			</h2>
 			<div class="post-item-mask">
-				<img class="tips-img" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+				<img class="tips-img" src="<?php echo $playIconUrl ?>">
 			</div>
 		</li>
 		<?php 
@@ -313,7 +332,7 @@
 	</div>
 	<div class="type-row">
 		<li>
-			<img src="<?php echo get_template_directory_uri() . './images/ui.png'; ?>" alt="#">
+			<img src="<?php echo $uiMainImgUrl ?>" alt="#">
 		</li>
 		<?php
 			//  banner 区域
@@ -329,7 +348,7 @@
 				<?php the_title(); ?>
 			</h2>
 			<div class="post-item-mask">
-				<img class="tips-img" src="<?php echo get_template_directory_uri() . './images/sy_box3guankan.png'; ?>">
+				<img class="tips-img" src="<?php echo $playIconUrl ?>">
 			</div>
 		</li>
 		<?php 

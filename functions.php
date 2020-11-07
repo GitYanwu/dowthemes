@@ -68,5 +68,6 @@
     add_filter( 'style_loader_src', 'wpdaxue_remove_cssjs_ver', 999 );
 
     add_theme_support('post-thumbnails');
+	
     
 ?>

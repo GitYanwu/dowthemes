@@ -32,6 +32,10 @@ body {
   background: rgb(255, 255, 255);
 }
 
+.pr{
+  position: relative;
+}
+
 .mt10 {
   margin-top: 10px !important;
 }
@@ -77,8 +81,17 @@ body {
 .top {
   min-height: 1px;
   width: 100%;
-  padding: 12px 0px;
+  padding: 22px 0px;
   box-sizing: border-box;
+}
+
+.user-info{
+  text-align: left;
+}
+
+.logo{
+  position: absolute;
+  left: 0;
 }
 
 .content-box1200 li {
@@ -640,11 +653,7 @@ footer {
   height: 100%;
 }
 
-.category-postlist li:nth-child(1) {
-  margin-left: 0;
-}
-
-.category-postlist li:nth-child(6n + 0) {
+.category-postlist li:nth-child(5n + 1) {
   margin-left: 0;
 }
 
